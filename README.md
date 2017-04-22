@@ -42,12 +42,13 @@ your memory beforehand. Some good SQL resources are:
 
 ## Machine learning
 
-* [How decision tree works](#how-decision-tree-works)
-* [How random forest works](#how-random-forest-works)
+* [Decision tree](#decision-tree)
+* [Bagging](#bagging)
+* [Random forest](#random-forest)
 
 
 
-### How decision tree works
+### Decision tree
 
 * Non-parametric, supervised learning algorithms
 * Given the training data, a decision tree algorithm divides the feature space into
@@ -62,11 +63,36 @@ metrics: gini impurity or information gain, won't matter much in practice.
     - can overfit easily (and generalize poorly)if we don't limit the depth of the tree
     - can be non-robust: A small change in the training data can lead to a totally different tree
 
-![decision-tree](https://docs.microsoft.com/en-us/azure/machine-learning/media/machine-learning-algorithm-choice/image5.png)
+![decision tree](https://docs.microsoft.com/en-us/azure/machine-learning/media/machine-learning-algorithm-choice/image5.png)
 
 [back to top](#machine-learning)
 
 
-### How random forest works
+### Bagging
 
-* Random forest is an ensemble of decision tree algorithms.
+To address overfitting, we can use an ensemble method called bagging (bootstrap aggregating),
+which reduces the variance of the meta learning algorithm. Bagging can be applied
+to decision tree or other algorithms.
+
+Here is a [great illustration](http://scikit-learn.org/stable/auto_examples/ensemble/plot_bias_variance.html#sphx-glr-auto-examples-ensemble-plot-bias-variance-py) of a single estimator vs. bagging
+
+![bagging](http://scikit-learn.org/stable/_images/sphx_glr_plot_bias_variance_001.png)
+
+[back to top](#machine-learning)
+
+
+### Random forest
+
+Random forest improves bagging further by adding some randomness. In random forest,
+only a subset of features are selected at random to construct a tree. The benefit is
+that random forest **decorrelates** the trees. 
+
+For example, suppose we have a dataset. There is one very predicative feature, and a couple
+of moderately predicative features. In bagging trees, most of the trees
+will use this very predicative feature in the top split, and therefore making most of the trees
+look similar, **and highly correlated**. Averaging many highly correlated results won't lead
+to a large reduction in variance compared with uncorrelated results. 
+In random forest for each split we only consider a subset of the features and therefore
+reduce the variance even further by introducing more uncorrelated trees.
+
+[back to top](#machine-learning)
