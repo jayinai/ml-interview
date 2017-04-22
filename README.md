@@ -95,4 +95,6 @@ to a large reduction in variance compared with uncorrelated results.
 In random forest for each split we only consider a subset of the features and therefore
 reduce the variance even further by introducing more uncorrelated trees.
 
+I wrote a [notebook](notebooks/bag-rf-var.ipynb) to illustrate this point
+
 [back to top](#machine-learning)
