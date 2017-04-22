@@ -42,9 +42,31 @@ your memory beforehand. Some good SQL resources are:
 
 ## Machine learning
 
+* [How decision tree works](#how-decision-tree-works)
 * [How random forest works](#how-random-forest-works)
 
 
 
+### How decision tree works
+
+* Non-parametric, supervised learning algorithms
+* Given the training data, a decision tree algorithm divides the feature space into
+regions. For inference, we first see which
+region does the test data point fall in, and take the mean label values (regression)
+or the majority label value (classification).
+* **Construction**: top-down, chooses a variable to split the data such that the 
+target variables within each region are as homogeneous as possible. Two common
+metrics: gini impurity or information gain, won't matter much in practice.
+* Advantage: simply to understand & interpret, mirrors human decision making
+* Disadvantage: 
+    - can overfit easily (and generalize poorly)if we don't limit the depth of the tree
+    - can be non-robust: A small change in the training data can lead to a totally different tree
+
+![decision-tree](https://docs.microsoft.com/en-us/azure/machine-learning/media/machine-learning-algorithm-choice/image5.png)
+
+[back to top](#machine-learning)
+
 
 ### How random forest works
+
+* Random forest is an ensemble of decision tree algorithms.
