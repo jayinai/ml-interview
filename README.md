@@ -119,7 +119,7 @@ metrics: gini impurity or information gain, won't matter much in practice.
     - can overfit easily (and generalize poorly)if we don't limit the depth of the tree
     - can be non-robust: A small change in the training data can lead to a totally different tree
 
-![decision tree](https://docs.microsoft.com/en-us/azure/machine-learning/media/machine-learning-algorithm-choice/image5.png)
+![decision tree](http://www.fizyka.umk.pl/~wduch/ref/kdd-tut/d-tree-iris.gif)
 
 [back to top](#machine-learning)
 
