@@ -110,7 +110,7 @@ samples at the leaf node)to control the tree size and overfitting. Always CV the
 
 **How it works**
 
-Boosting builds on weak learners, and in a iterative fashion. In each iteration,
+Boosting builds on weak learners, and in an iterative fashion. In each iteration,
 a new learner is added, while all existing learners are kept unchanged. All learners
 are weighted based on their performance (e.g., accuracy), and after a weak learner
 is added, the data are re-weighted: examples that are misclassified gain more weights,
@@ -126,7 +126,6 @@ focus more on examples that previous weak learners misclassified.
 
 **XGBoost (Extreme Gradient Boosting)**
 
-From Tianqi Chen, author of XGBoost
 
 > XGBoost uses a more regularized model formalization to control overfitting, which gives it better performance
 
