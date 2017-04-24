@@ -42,11 +42,66 @@ your memory beforehand. Some good SQL resources are:
 
 ## Machine learning
 
+First, it's always a good idea to review [Chapter 5](http://www.deeplearningbook.org/contents/ml.html) 
+of the deep learning book, which covers machine learning basics.
+
+
+* [Linear regression](#linear-regression)
+* [Logistic regression](#logistic-regression)
+* [KNN](#knn)
 * [Decision tree](#decision-tree)
 * [Bagging](#bagging)
 * [Random forest](#random-forest)
 * [Boosting](#boosting)
+* [Generative vs discriminative](#generative-vs-discriminative)
 
+
+
+### Linear regression
+
+* how to learn the parameter: minimize the cost function
+* how to minimize cost function: gradient descent
+* regularization: 
+    - L1 (lasso): can shrink certain coef to zero, thus performing feature selection
+    - L2 (ridge): shrink all coef with the same proportion; almost always outperforms L1
+    - combined (Elastic Net): 
+* assumes linear relationship between features and the label
+* can add polynomial and interaction features to add non-linearity
+
+![lr](http://scikit-learn.org/stable/_images/sphx_glr_plot_cv_predict_thumb.png)
+
+[back to top](#machine-learning)
+
+
+### Logistic regression
+
+* Generalized linear model (GLM) for classification problems
+* Apply the sigmoid function to the output of linear models, squeezing the target
+to range [0, 1] 
+* Threshold to make prediction: if the output > .5, prediction 1; otherwise prediction 0
+* a special case of softmax function, which deals with multi-class problem
+
+[back to top](#machine-learning)
+
+### KNN
+
+Given a data point, we compute the K nearest data points (neighbors) using certain
+distance metric (e.g., Euclidean metric). For classification, we take the majority label
+of neighbors; for regression, we take the mean of the label values.
+
+Note for KNN technically we don't need to train a model, we simply compute during
+inference time. This can be computationally expensive since each of the test example
+need to be compared with every training example to see how close they are.
+
+There are approximation methods can have faster inference time by
+partitioning the training data into regions.
+
+Note when K equals 1 or other small number the model is prone to overfitting (high variance), while
+when K equals number of data points or other large number the model is prone to underfitting (high bias)
+
+![KNN](https://cambridgecoding.files.wordpress.com/2016/03/training_data_only_99_1.png?w=610)
+
+[back to top](#machine-learning)
 
 
 ### Decision tree
@@ -129,5 +184,30 @@ focus more on examples that previous weak learners misclassified.
 
 > XGBoost uses a more regularized model formalization to control overfitting, which gives it better performance
 
+
+[back to top](#machine-learning)
+
+
+### Generative vs discriminative
+
+* Discriminative algorithms model *p(y|x; w)*, that is, given the dataset and learned
+parameter, what is the probability of y belonging to a specific class. A discriminative algorithm
+doesn't care about how the data was generated, it simply categorizes a given example
+* Generative algorithms try to model *p(x|y)*, that is, the distribution of features given
+that it belongs to a certain class. A generative algorithm models how the data was
+generated.
+
+> Given a training set, an algorithm like logistic regression or
+> the perceptron algorithm (basically) tries to find a straight line—that is, a
+> decision boundary—that separates the elephants and dogs. Then, to classify
+> a new animal as either an elephant or a dog, it checks on which side of the
+> decision boundary it falls, and makes its prediction accordingly.
+
+> Here’s a different approach. First, looking at elephants, we can build a
+> model of what elephants look like. Then, looking at dogs, we can build a
+> separate model of what dogs look like. Finally, to classify a new animal, we
+> can match the new animal against the elephant model, and match it against
+> the dog model, to see whether the new animal looks more like the elephants
+> or more like the dogs we had seen in the training set.
 
 [back to top](#machine-learning)
