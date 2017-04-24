@@ -45,6 +45,7 @@ your memory beforehand. Some good SQL resources are:
 * [Decision tree](#decision-tree)
 * [Bagging](#bagging)
 * [Random forest](#random-forest)
+* [Boosting](#boosting)
 
 
 
@@ -95,6 +96,39 @@ to a large reduction in variance compared with uncorrelated results.
 In random forest for each split we only consider a subset of the features and therefore
 reduce the variance even further by introducing more uncorrelated trees.
 
-I wrote a [notebook](notebooks/bag-rf-var.ipynb) to illustrate this point
+I wrote a [notebook](notebooks/bag-rf-var.ipynb) to illustrate this point.
+
+In practice, tuning random forest entails having a large number of trees (the more the better, but
+always consider computation constraint). Also, `min_samples_leaf` (The minimum number of
+samples at the leaf node)to control the tree size and overfitting. Always CV the parameters. 
+
+
+[back to top](#machine-learning)
+
+
+### Boosting
+
+**How it works**
+
+Boosting builds on weak learners, and in a iterative fashion. In each iteration,
+a new learner is added, while all existing learners are kept unchanged. All learners
+are weighted based on their performance (e.g., accuracy), and after a weak learner
+is added, the data are re-weighted: examples that are misclassified gain more weights,
+while examples that are correctly classified lose weights. Thus, future weak learners
+focus more on examples that previous weak learners misclassified.
+
+
+**Difference from random forest (RF)**
+
+* RF grows trees **in parallel**, while Boosting is sequential
+* RF reduces variance, while Boosting reduces errors by reducing bias
+
+
+**XGBoost (Extreme Gradient Boosting)**
+
+From Tianqi Chen, author of XGBoost
+
+> XGBoost uses a more regularized model formalization to control overfitting, which gives it better performance
+
 
 [back to top](#machine-learning)
