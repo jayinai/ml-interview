@@ -56,10 +56,10 @@ of the deep learning book, which covers machine learning basics.
 * [Random forest](#random-forest)
 * [Boosting](#boosting)
 * [Clustering]
-* [MLP]
-* [CNN]
-* [RNN]
-* [word2vec]
+* [MLP](#mlp)
+* [CNN](#cnn)
+* [RNN and LSTM](#rnn-and-lstm)
+* [word2vec](#word2vec)
 * [Generative vs discriminative](#generative-vs-discriminative)
 
 
@@ -206,6 +206,74 @@ focus more on examples that previous weak learners misclassified.
 
 > XGBoost uses a more regularized model formalization to control overfitting, which gives it better performance
 
+[back to top](#machine-learning)
+
+
+### MLP
+
+A feedforward neural network where we have multiple layers. In each layer we
+can have multiple neurons, and each of the neuron in the next layer is a linear/nonlinear
+combination of the all the neurons in the previous layer. In order to train the network
+we back propagate the errors layer by layer. In theory MLP can approximate any functions.
+
+![mlp](http://dms.irb.hr/tutorial/images/ann.jpg)
+
+[back to top](#machine-learning)
+
+### CNN
+
+The Conv layer is the building block of a Convolutional Network. The Conv layer consists
+of a set of learnable filters (such as 5 * 5 * 3, width * height * depth). During the forward
+pass, we slide (or more precisely, convolve) the filter across the input and compute the dot 
+product. Learning again happens when the network back propagate the error layer by layer.
+
+Initial layers capture low-level features such as angle and edges, while later
+layers learn a combination of the low-level features and in the previous layers 
+and can therefore represent higher level feature, such as shape and object parts.
+
+![CNN](http://www.kdnuggets.com/wp-content/uploads/dnn-layers.jpg)
+
+[back to top](#machine-learning)
+
+### RNN and LSTM
+
+RNN is another paradigm of neural network where we have difference layers of cells,
+and each cell only take as input the cell from the previous layer, but also the previous
+cell within the same layer. This gives RNN the power to model sequence. 
+
+![RNN](http://karpathy.github.io/assets/rnn/diags.jpeg)
+
+This seems great, but in practice RNN barely works due to exploding/vanishing gradient, which 
+is cause by a series of multiplication of the same matrix. To solve this, we can use 
+a variation of RNN, called long short-term memory (LSTM), which is capable of learning
+long-term dependencies. 
+
+The math behind LSTM can be pretty complicated, but intuitively LSTM introduce 
+    - input gate
+    - output gate
+    - forget gate
+    - memory cell (internal state)
+    
+LSTM resembles human memory: it forgets old stuff (old internal state * forget gate) 
+and learns from new input (input node * input gate)
+
+![lstm](http://deeplearning.net/tutorial/_images/lstm_memorycell.png)
+
+[back to top](#machine-learning)
+
+
+### word2vec
+
+* Shallow, two-layer neural networks that are trained to construct linguistic context of words
+* Takes as input a large corpus, and produce a vector space, typically of several hundred
+dimension, and each word in the corpus is assigned a vector in the space
+* The key idea is context: words that occur often in the same context should have same/opposite
+meanings.
+* Two flavors
+    - continuous bag of words (CBOW): the model predicts the current word given a window of surrounding context words
+    - skip gram: predicts the surrounding context words using the current word
+
+![word2vec](https://deeplearning4j.org/img/countries_capitals.png)
 
 [back to top](#machine-learning)
 
