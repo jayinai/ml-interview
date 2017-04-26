@@ -49,11 +49,18 @@ of the deep learning book, which covers machine learning basics.
 * [Linear regression](#linear-regression)
 * [Logistic regression](#logistic-regression)
 * [KNN](#knn)
+* [SVM]
+* [Naive Bayes]
 * [Decision tree](#decision-tree)
 * [Bagging](#bagging)
 * [Random forest](#random-forest)
 * [Boosting](#boosting)
 * [Generative vs discriminative](#generative-vs-discriminative)
+* [Clustering]
+* [MLP]
+* [CNN]
+* [RNN]
+* [word2vec]
 
 
 
