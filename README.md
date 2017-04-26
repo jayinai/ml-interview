@@ -49,18 +49,18 @@ of the deep learning book, which covers machine learning basics.
 * [Linear regression](#linear-regression)
 * [Logistic regression](#logistic-regression)
 * [KNN](#knn)
-* [SVM]
+* [SVM](#svm)
 * [Naive Bayes]
 * [Decision tree](#decision-tree)
 * [Bagging](#bagging)
 * [Random forest](#random-forest)
 * [Boosting](#boosting)
-* [Generative vs discriminative](#generative-vs-discriminative)
 * [Clustering]
 * [MLP]
 * [CNN]
 * [RNN]
 * [word2vec]
+* [Generative vs discriminative](#generative-vs-discriminative)
 
 
 
@@ -107,6 +107,21 @@ Note when K equals 1 or other small number the model is prone to overfitting (hi
 when K equals number of data points or other large number the model is prone to underfitting (high bias)
 
 ![KNN](https://cambridgecoding.files.wordpress.com/2016/03/training_data_only_99_1.png?w=610)
+
+[back to top](#machine-learning)
+
+
+### SVM
+
+* can perform linear, nonlinear, or outlier detection (unsupervised)
+* large margin classifier: not only have a decision boundary, but want the boundary
+to be as far from the closest training point as possible
+* the closest training examples are called the support vectors, since they are the points
+based on which the decision boundary is drawn
+* SVMs are sensitive to feature scaling
+
+![svm](https://qph.ec.quoracdn.net/main-qimg-675fedee717331e478ecfcc40e2e4d38)
+
 
 [back to top](#machine-learning)
 
