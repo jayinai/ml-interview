@@ -55,6 +55,7 @@ of the deep learning book, which covers machine learning basics.
 * [Bagging](#bagging)
 * [Random forest](#random-forest)
 * [Boosting](#boosting)
+* [Stacking](#stacking)
 * [Clustering]
 * [MLP](#mlp)
 * [CNN](#cnn)
@@ -221,6 +222,18 @@ focus more on examples that previous weak learners misclassified.
 
 
 > XGBoost uses a more regularized model formalization to control overfitting, which gives it better performance
+
+[back to top](#machine-learning)
+
+
+### Stacking
+
+* Instead of using trivial functions (such as hard voting) to aggregate the predictions from individual learners, train a model to perform this aggregation
+* First split the training set into two subsets: the first subset is used to train the learners in the first layer
+* Next the first layer learners are used to make predictions (meta features) on the second subset, and those predictions are used to train another models (to obtain the weigts of different learners) in the second layer
+* We can train multiple models in the second layer, but this entails subsetting the original dataset into 3 parts
+
+![stacking](http://www.kdnuggets.com/wp-content/uploads/backward-propagation-stacker-models.jpg)
 
 [back to top](#machine-learning)
 
