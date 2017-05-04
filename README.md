@@ -172,8 +172,8 @@ Here is a [great illustration](http://scikit-learn.org/stable/auto_examples/ense
 ### Random forest
 
 Random forest improves bagging further by adding some randomness. In random forest,
-only a subset of features are selected at random to construct a tree. The benefit is
-that random forest **decorrelates** the trees. 
+only a subset of features are selected at random to construct a tree (while often not subsample instances).
+The benefit is that random forest **decorrelates** the trees. 
 
 For example, suppose we have a dataset. There is one very predicative feature, and a couple
 of moderately predicative features. In bagging trees, most of the trees
@@ -188,6 +188,12 @@ I wrote a [notebook](notebooks/bag-rf-var.ipynb) to illustrate this point.
 In practice, tuning random forest entails having a large number of trees (the more the better, but
 always consider computation constraint). Also, `min_samples_leaf` (The minimum number of
 samples at the leaf node)to control the tree size and overfitting. Always CV the parameters. 
+
+**Feature importance**
+
+In a decision tree, important features are likely to appear closer to the root of the tree. We can get
+a feature's importance for random forest by computing the averaging depth at which it appears across all
+trees in the forest.
 
 
 [back to top](#machine-learning)
