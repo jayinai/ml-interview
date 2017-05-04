@@ -61,6 +61,7 @@ of the deep learning book, which covers machine learning basics.
 * [RNN and LSTM](#rnn-and-lstm)
 * [word2vec](#word2vec)
 * [Generative vs discriminative](#generative-vs-discriminative)
+* [Paramteric vs Nonparametric](#paramteric-vs-nonparametric)
 
 
 
@@ -140,6 +141,7 @@ metrics: gini impurity or information gain, won't matter much in practice.
 * Disadvantage: 
     - can overfit easily (and generalize poorly)if we don't limit the depth of the tree
     - can be non-robust: A small change in the training data can lead to a totally different tree
+    - instability: sensitive to training set rotation due to its orthogonal decision boundaries
 
 ![decision tree](http://www.fizyka.umk.pl/~wduch/ref/kdd-tut/d-tree-iris.gif)
 
@@ -299,5 +301,13 @@ generated.
 > can match the new animal against the elephant model, and match it against
 > the dog model, to see whether the new animal looks more like the elephants
 > or more like the dogs we had seen in the training set.
+
+[back to top](#machine-learning)
+
+
+### Paramteric vs Nonparametric
+
+* A learning model that summarizes data with a set of parameters of fixed size (independent of the number of training examples) is called a parametric model.
+* A model where the number of parameters is not determined prior to training. Nonparametric does not mean that they have NO parameters! On the contrary, nonparametric models (can) become more and more complex with an increasing amount of data.
 
 [back to top](#machine-learning)
