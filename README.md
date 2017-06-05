@@ -245,7 +245,7 @@ can have multiple neurons, and each of the neuron in the next layer is a linear/
 combination of the all the neurons in the previous layer. In order to train the network
 we back propagate the errors layer by layer. In theory MLP can approximate any functions.
 
-![mlp](http://scikit-learn.org/stable/_images/multilayerperceptron_network.png)
+![mlp](http://neuroph.sourceforge.net/tutorials/images/MLP.jpg)
 
 [back to top](#machine-learning)
 
