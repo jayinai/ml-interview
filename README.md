@@ -1,4 +1,4 @@
-# Machine learning interview
+# This repo is deprecated. Please go to the new repo, [Data Science Question Answer](https://github.com/ShuaiW/data-science-question-answer)
 
 This repository covers how to prepare for machine learning interviews, mainly
 in the format of questions & answers. Asides from machine learning knowledge,
