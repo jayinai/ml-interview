@@ -1,4 +1,4 @@
-# This repos is depreciated, check out the latest [Nailing Machine Learning Interviews](https://github.com/jayinai/nail-ml-interview-theory)
+# This repos is depreciated, check out the latest [Nailing Machine Learning Concepts](https://github.com/jayinai/nail-ml-concept)
 
 This repository covers how to prepare for machine learning interviews, mainly
 in the format of questions & answers. Asides from machine learning knowledge,
